@@ -98,6 +98,31 @@
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
+
+                  <h4>SKUs</h4>
+                  {% for product in product.metafields.custom.child_products.value %}
+
+                    <div class="child-products" data-name="{{ product.id }}">
+                      {{ product.selected_or_first_available_variant.sku }}
+                    </div>
+                  {% endfor %}
+
+                  
+                    <div class="bundle-products">
+                      <ul>
+                        {% for child_product in product.metafields.custom.child_products.value %}
+                          <li class="bundle-item">
+                            <a href="{{ child_product.url }}">
+                              <span>{{ child_product.title }}</span>
+                            </a>
+                            {% assign default_variant = child_product.variants.first %}
+                            <input type="hidden" data-bundle-variant-id value="{{ default_variant.id }}">
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+
+
                   <h1>{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">

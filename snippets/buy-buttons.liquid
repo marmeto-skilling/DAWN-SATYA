@@ -75,6 +75,9 @@
             type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            data-child-prods="{% for child_product in product.metafields.custom.child_products.value %}
+              {{ child_product.selected_or_first_available_variant.id }}{% unless forloop.last %},{% endunless %}
+            {% endfor %}"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
               or product.selected_or_first_available_variant == null
