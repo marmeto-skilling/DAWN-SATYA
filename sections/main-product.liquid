@@ -99,7 +99,7 @@
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
 
-                  <h4>SKUs</h4>
+                  {% comment %} <h4>SKUs</h4>
                   {% for product in product.metafields.custom.child_products.value %}
 
                     <div class="child-products" data-name="{{ product.id }}">
@@ -120,7 +120,7 @@
                           </li>
                         {% endfor %}
                       </ul>
-                    </div>
+                    </div> {% endcomment %}
 
 
                   <h1>{{ product.title | escape }}</h1>

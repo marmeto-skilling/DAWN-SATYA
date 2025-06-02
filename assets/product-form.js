@@ -63,7 +63,7 @@ if (!customElements.get('product-form')) {
           formData.append('sections_url', window.location.pathname);
           this.cart.setActiveElement(document.activeElement);
         }
-          // appended the custom datas that we got from above
+          // appended the custom datas that we got from above and place the below code just above the config.body = formData;
         if(variantIdNumbers.length != 0){
           items.forEach((item, index) => {
             formData.append(`items[${index}][id]`, item.id);
