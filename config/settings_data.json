@@ -37,7 +37,7 @@
           "collection_selected_icon_fill_color": "#5c6ac4",
           "collection_selected_icon_border_color": "#5c6ac4",
           "custom_wishlist_icon": false,
-          "custom_wishlist_icon_right": "true",
+          "custom_wishlist_icon_right": "false",
           "collection_count_layout": "top_count",
           "collection_count_background_color": "#5c6ac4",
           "collection_count_color": "#ffffff"
